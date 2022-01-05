@@ -4,9 +4,10 @@ import { Flex, Box, Text, Image as Img, UnorderedList, ListItem, Link} from '@ch
 import LinkN from 'next/link'
 import { getSortedPostsData } from '../lib/posts'
 import { Date } from '../components/date'
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
 
-export async function getStaticProps() { // for ssr all you do is export getServerSideProps() instead of getStaticProps (needs to be in a page)
+export const getStaticProps: GetStaticProps = async () => { // for ssr all you do is export getServerSideProps() instead of getStaticProps (needs to be in a page)
   const allPostsData = getSortedPostsData()
   return {
     props: {

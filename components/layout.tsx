@@ -6,7 +6,8 @@ import LinkN from 'next/link'
 
 export const siteTitle = 'Next.js sample website'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: { children: React.ReactNode
+    home?: boolean }) {
     return (
         <>
             <Head>
@@ -44,7 +45,7 @@ export default function Layout({ children, home }) {
                                     ) : (
                                         <>
                                           <Img w={24} src='/profile.svg' alt='profile picture'/>
-                                          <LinkN href='/' color='primary2'><Link>Darren Baldwin</Link></LinkN>
+                                          <LinkN href='/'><Link color='primary2'>Darren Baldwin</Link></LinkN>
                                         </>
                                     )}
                                 </Flex>
